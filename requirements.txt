@@ -1,0 +1,22 @@
+# Core Jupyter & Kernel
+notebook
+nbconvert
+nbformat
+ipykernel
+jupytext
+
+# Data Science
+numpy
+pandas
+matplotlib
+seaborn
+scikit-learn
+statsmodels
+
+# Deep Learning 
+#torch
+#tensorflow
+
+# File formats and utilities
+#librosa
+#opyxl

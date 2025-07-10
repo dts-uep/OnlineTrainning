@@ -1,0 +1,18 @@
+FROM python:3.10-slim
+
+RUN useradd -ms /bin/bash runner
+
+WORKDIR /sandbox
+ENV OUTPUT_DIR=/sandbox/results
+ENV DATA_DIR=/sandbox/workplace/data
+ENV UTILS_DIR=/sandbox/workplace/utils
+
+RUN apt-get update && apt-get install -y build-essential
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+RUN python -m ipykernel install --name=python3 --display-name "Python 3"
+COPY utils/run_and_export.py /sandbox/utils/run_and_export.py
+
+ENTRYPOINT ["python", "utils/run_and_export.py"]

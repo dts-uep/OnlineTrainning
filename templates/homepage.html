@@ -1,0 +1,32 @@
+<b>HOMEPAGE</b> <br>
+/ <br>
+<br>
+<b>UPLOAD</b><br>
+/upload-main: upload the main script/notebook (.py, .ipynb) <br>
+/upload-data/{job_id}: upload the data needed for script/notebook (.csv) <br>
+/upload-util/{job_id}: upload the utils needed for script/notebook (.py) <br>
+<br>
+<b>FILES</b><br>
+/files/run-script/{job_id}: start running the main script <br>
+/files/download/{job_id}: download results zip file once complete <br>
+<br>
+<b>STATUS</b><br>
+/status/result/{job_id}: get the current status of the script running job <br>
+/status/full/{job_id}: query for full information <br>
+<br>
+<b>ERROR</b>
+/error/error-log/{job_id}: get execution error if any <br>
+<b>IN SCRIPT NOTE</b>
+- There should only be one main script<br>
+- If there is external module, upload in /upload-util/{job_id}<br>
+- In script should be import utils.module<br>
+- To get utils folder path:<br>
+utils_dir = os.getenv("UTILS_DIR") <br>
+utils_path = os.path.join(utils_dir, module)<br>
+- If there is data, upload in /upload-data/{job_id}<br>
+- To get data folder path: <br>
+data_dir = os.getenv("DATA_DIR") <br>
+data_path = os.path.join(data_dir, data)<br>
+- For any other saved object: <br>
+output_dir = os.getenv("OUTPUT_DIR", "/sandbox/workplace") <br>
+save_path = os.path.join(output_dir, object_file)
