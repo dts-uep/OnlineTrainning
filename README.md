@@ -55,30 +55,30 @@ project/
 ├── retrain_demand.sh                           # For modifysing system to retrain model periodically
 
 ## **Start**
-* Make .sh files executable
-chmod +x /home/your_user/path/to/project/start_online_trainning.sh
-chmod +x /home/your_user/path/to/project/retrain_demand.sh  
+* Make .sh files executable  
+chmod +x /home/your_user/path/to/project/start_online_trainning.sh  
+chmod +x /home/your_user/path/to/project/retrain_demand.sh   
 
-* Direct to project folder
-cd /home/your_user/path/to/project
+* Direct to project folder  
+cd /home/your_user/path/to/project  
 
-* Build Docker image (once)
-docker build -f Dockerfile.runner -t notebook-runner .
+* Build Docker image (once)  
+docker build -f Dockerfile.runner -t notebook-runner .  
 
-* Run app
-./start_online_trainning.sh
+* Run app  
+./start_online_trainning.sh  
 
-* Set periodic retrain everymonth
-crontab -e
-Add
-0 0 1 * * /bin/bash /home/your_user/path/to/project/retrain_demand.sh
+* Set periodic retrain everymonth  
+crontab -e  
+Add:
+0 0 1 * * /bin/bash /home/your_user/path/to/project/retrain_demand.sh  
 
 ## **Example**
-* Upload script
-curl -F "notebook.ipynb" http://localhost:5000/upload-main"
+* Upload script  
+curl -F "notebook.ipynb" http://localhost:5000/upload-main"  
 
-* Download results
-curl -o result.md http://localhost:5000/files/download/<job_id>
+* Download results  
+curl -o result.md http://localhost:5000/files/download/<job_id>  
 
 ## **Modules & Versions**
 * Python: 3.12.3
@@ -91,4 +91,4 @@ curl -o result.md http://localhost:5000/files/download/<job_id>
 * seaborn: 0.13.2
 
 ## **Note**
-* Data for analysis was stimulated.
+* Data for analysis was simulated
