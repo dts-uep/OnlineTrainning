@@ -23,31 +23,33 @@ This project allows users to upload .ipynb or .py scripts via curl or a simple w
 * Jupytext
 
 ## **Project Strucute**
+```
 project/
-│
-├── app.py                                      # Flask app entrypoint
-├── celery_app/           
-│   └── tasks.py                                # Celery task definition
+├── app.py                        # Flask app entrypoint
+├── celery_app/
+│   └── tasks.py                  # Celery task definition
 ├── utils/
-│   ├── db_handle.py                            # SQLite manage (insert, mark_done, etc.)
-│   ├── run_and_export.py                       # Run script task process
-│   └── clean_up.py                             # Temporary folder clean-up
-├── routes/                                     # Flask blueprints
-│   ├── files.py                                # Upload, run scripts, download routes
-│   ├── status.py                               # Status checking
-│   └── errors.py                               # Error handlers
-├── analysis/                                   # Flask blueprints
-│   ├── OnlineTrainningDemand.ipynb             # Train and predict daily demand and cpu power
-│   └── cpu_per_time_system.pkl                 # Predict results
-├── Dockerfile                                  # Notebook runner image
+│   ├── db_handle.py              # SQLite manage (insert, mark_done, etc.)
+│   ├── run_and_export.py         # Run script task process
+│   └── clean_up.py               # Temporary folder clean-up
+├── routes/                       # Flask blueprints
+│   ├── files.py                  # Upload, run scripts, download routes
+│   ├── status.py                 # Status checking
+│   └── errors.py                 # Error handlers
+├── analysis/                     # ML & prediction
+│   ├── OnlineTrainningDemand.ipynb  # Train and predict daily demand and CPU power
+│   └── cpu_per_time_system.pkl      # Predict results
+├── Dockerfile                   # Notebook runner image
 ├── requirements.txt
-├── jobs.db                                     # SQLite database
+├── jobs.db                      # SQLite database
 ├── README.md
-└── templates/                                  # HTML forms
-    ├── homepage.html        
-    ├── upload_data.html         
-    ├── upload_main.html   
+└── templates/                   # HTML forms
+    ├── homepage.html
+    ├── upload_data.html
+    ├── upload_main.html
     └── upload_util.html
+```
+
 
 ├── start_online_trainning.sh                   # For quickly start the system
 ├── retrain_demand.sh                           # For modifysing system to retrain model periodically
