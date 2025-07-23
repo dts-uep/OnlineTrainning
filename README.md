@@ -51,8 +51,8 @@ project/
 ```
 
 
-├── start_online_trainning.sh   # For quickly start the system. 
-├── retrain_demand.sh           # For modifysing system to retrain model periodically. 
+├── start_online_trainning.sh   # For quickly start the system.  
+├── retrain_demand.sh           # For modifysing system to retrain model periodically.  
 
 ## **Start**
 * Make .sh files executable  
